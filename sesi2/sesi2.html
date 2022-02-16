@@ -1,303 +1,126 @@
 <html>
-    <head>
-        <title>Sesi 1</title>
-        <style>
-            body{
-                background-color: lightblue;
-            }
-            .nav{
-                background-color: white;
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            .menu{
-                display: flex;
-                flex-direction: row;
-            }
-            .menu .menu-item{
-                list-style-type: none;
-                margin-right: 3em;
-            }
-            .menu .menu-item a{
-                text-decoration: none;
-                color: black;
-                font-size: large;
-            }
-            .profile-section{
-                margin-top: 2em;
-                margin-bottom: 2em;
-                background-color: white;
-                width: 100%;
-                height: 300px;
-                display: flex;
-                flex-direction: row;
-            }
-            .left-profile{
-                width: 40%;
-                height: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: start;
-                align-items: center;
-            }
-            .left-profile .nama{
-                font-size: 32px;
-                font-weight: bold;
-                color: black;
-                margin-bottom: 1em;
-            }
-            .left-profile .jabatan{
-                font-size: 24px;
-                font-weight: 500;
-                color: black;
-                margin-top: 1em;
-                margin-bottom: 1em;
-            }
-            .left-profile .btn-kontak{
-                background-color: #0026F8;
-                color: white;
-                padding: 0.5em;
-                border: none;
-                border-radius: 10px;
-                font-size: medium;
-                font-weight: bold;
-                margin-top: 1em;
-                margin-bottom: 1em;
-            }
-            .left-profile .btn-resume{
-                background-color: white;
-                color: #93AF83;
-                padding: 0.5em;
-                border-width: 1px;
-                border-color: #93AF83;
-                border-radius: 20px;
-                font-size: medium;
-                font-weight: bold;
-                margin-top: 1em;
-                margin-bottom: 1em;
-            }
-            .left-profile .profile-image{
-                padding-left: 2em;
-            }
-            .left-profile .profile-intro{
-                padding-left: 2em;
-            }
-
-            .right-profile {
-                width: 25%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                padding-top: 4em;
-                justify-content: start;
-            }
-            .bio-section{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                margin-bottom: 1em;
-                justify-content: space-between;
-            }
-            .ml-2{
-                margin-left: 2em;
-            }
-            .text-right{
-                text-align: right;
-            }
-            .text-left{
-                text-align: left;
-            }
-
-            .section-bio-form{
-                background-color: white;
-                padding: 2em;
-            }
-
-            .form-group{
-                display: flex;
-                flex-direction: column;
-            }
-
-            .form-group label{
-                font-weight: 700;
-                margin-bottom: 0.5em;
-            }
-            .form-group input{
-                border-radius: 10px;
-                border-width: 1px;
-                border-color: #93AF83;
-                padding: 0.5em;
-                margin-bottom: 0.5em;
-            }
-            .btn-submit{
-                margin-top: 1em;
-                width: 100%;
-                background-color: #2F6E16;
-                color: white;
-                padding: 0.5em;
-                border: none;
-                border-radius: 10px;
-            }
-            
-        </style>
-    </head>
-    <body>
-        <!-- Navigation Bar -->
-        <nav class="nav">
-            <div style="padding-top: 1em;padding-left: 1em;">
-                testing
-            </div>
-            <ul class="menu">
-                <li class="menu-item">
-                    <a href="#" >HOME</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" >PRODUCT</a>
-                    
-                </li>
-                <li class="menu-item">
-                    <a href="#" >GALLERY</a>
-                    
-                </li>
-                <li class="menu-item">
-                    <a href="#" >BLOG</a>
-                    
-                </li>
-                <li class="menu-item">
-                    <a href="#" >INVENTORY</a>
-                </li>
-            </ul>
-            
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <title>Sesi 1</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+      <div style="padding-top: 1em; padding-left: 1em">testing</div>
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="#">HOME</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">PRODUCT</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">GALLERY</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">BLOG</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">INVENTORY</a>
+        </li>
+      </ul>
+      <button class="menu-btn">Menu</button>
+    </nav>
+    <header class="header"></header>
+    <main>
+      <!-- Profile -->
+      <section class="profile-section">
+        <div class="left-profile">
+          <div class="profile-image">
+            <img src="https://via.placeholder.com/200" alt="profile" />
+          </div>
+          <div class="profile-intro">
+            <div class="nama">Antonius Joshua</div>
+            <div class="jabatan">Frontend Designer</div>
             <div>
-                ini belakang
+              <div>
+                <button class="btn-kontak">Kontak</button>
+                <button class="btn-resume">Resume</button>
+              </div>
             </div>
-        </nav>
-        <header class="header">
-            
-        </header>
-        <main>
-            <!-- Profile -->
-            <section class="profile-section">
-                <div class="left-profile">
-                    <div class="profile-image">
-                        <img src="https://via.placeholder.com/200" alt="profile" >
-                    </div>
-                    <div class="profile-intro">
-                        <div class="nama">
-                            Antonius Joshua
-                        </div>
-                        <div class="jabatan">
-                            Frontend Designer
-                        </div>
-                        <div>
-                            <div>
-                                <button class="btn-kontak">Kontak</button>
-                                <button class="btn-resume">Resume</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="right-profile">
-                    <div class="bio-section availability-section">
-                        <div>
-                            Availability : 
-                        </div>
-                        <div class="ml-2 text-left">
-                            Full Time
-                        </div>
-                    </div>
-                    <div class="bio-section age-section">
-                        <div>
-                            Usia : 
-                        </div>
-                        <div class="ml-2 text-left">
-                            23
-                        </div>
-                    </div>
-                    <div class="bio-section location-section">
-                        <div>
-                            Lokasi : 
-                        </div>
-                        <div class="ml-2 text-left">
-                            Full Time
-                        </div>
-                    </div>
-                    <div class="bio-section experience-section">
-                        <div>
-                            Pengalaman : 
-                        </div>
-                        <div class="ml-2 text-left">
-                            5 Tahun
-                        </div>
-                    </div>
-                    <div class="bio-section email-section">
-                        <div>
-                            Email:
-                        </div>
-                        <div class="ml-2 text-left">
-                            antoniusjoshua47@gmail.com
-                        </div>
-                    </div>
-                </div>
-            </section>
-           
-            <!-- Forms -->
-            <section class="section-bio-form">
-                <form>
-                    <div class="form-group">
-                        <label for="">
-                            Name
-                        </label>
-                        <input type="text" name="name" id="name" placeholder="Name" />
-                    </div>
-                    <div class="form-group">
-                        <label for="role">
-                            Role
-                        </label>
-                        <input type="text" name="role" id="role" placeholder="role" />
-                    </div>
-                    <div class="form-group">
-                        <label for="availability">
-                            Availability
-                        </label>
-                        <input type="text" name="availability" id="availability" placeholder="availability" />
-                    </div>
-                    <div class="form-group">
-                        <label for="age">
-                            Age
-                        </label>
-                        <input type="text" name="age" id="age" placeholder="Age : " />
-                    </div>
-                    <div class="form-group">
-                        <label for="lokasi">
-                            Lokasi
-                        </label>
-                        <input type="text" name="lokasi" id="lokasi" placeholder="Name" />
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">
-                            Yours Experience
-                        </label>
-                        <input type="text" name="experience" id="experience" placeholder="experience" />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">
-                            Email
-                        </label>
-                        <input type="email" name="email" id="email" placeholder="ex : antoniusjoshua47@gmail.com" />
-                    </div>
-                    <button class="btn-submit">Submit</button>
-                </form>
-            </section>
-        </main>
-        <footer>
+          </div>
+        </div>
+        <div class="right-profile">
+          <div class="bio-section availability-section">
+            <div>Availability :</div>
+            <div class="ml-2 text-left">Full Time</div>
+          </div>
+          <div class="bio-section age-section">
+            <div>Usia :</div>
+            <div class="ml-2 text-left">23</div>
+          </div>
+          <div class="bio-section location-section">
+            <div>Lokasi :</div>
+            <div class="ml-2 text-left">Full Time</div>
+          </div>
+          <div class="bio-section experience-section">
+            <div>Pengalaman :</div>
+            <div class="ml-2 text-left">5 Tahun</div>
+          </div>
+          <div class="bio-section email-section">
+            <div>Email:</div>
+            <div class="ml-2 text-left">antoniusjoshua47@gmail.com</div>
+          </div>
+        </div>
+      </section>
 
-        </footer>
-       
-        
-    
-    </body>
+      <!-- Forms -->
+      <section class="section-bio-form">
+        <form>
+          <div class="form-group">
+            <label for=""> Name </label>
+            <input type="text" name="name" id="name" placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <label for="role"> Role </label>
+            <input type="text" name="role" id="role" placeholder="role" />
+          </div>
+          <div class="form-group">
+            <label for="availability"> Availability </label>
+            <input
+              type="text"
+              name="availability"
+              id="availability"
+              placeholder="availability"
+            />
+          </div>
+          <div class="form-group">
+            <label for="age"> Age </label>
+            <input type="text" name="age" id="age" placeholder="Age : " />
+          </div>
+          <div class="form-group">
+            <label for="lokasi"> Lokasi </label>
+            <input type="text" name="lokasi" id="lokasi" placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <label for="experience"> Yours Experience </label>
+            <input
+              type="text"
+              name="experience"
+              id="experience"
+              placeholder="experience"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email"> Email </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="ex : antoniusjoshua47@gmail.com"
+            />
+          </div>
+          <button class="btn-submit">Submit</button>
+        </form>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>

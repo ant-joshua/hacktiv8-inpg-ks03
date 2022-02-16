@@ -1,0 +1,218 @@
+body {
+    background-color: lightblue;
+  }
+  .nav {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+  }
+  .menu .menu-item {
+    list-style-type: none;
+    margin-right: 3em;
+  }
+  .menu .menu-item a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+  }
+  .profile-section {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: white;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+  }
+  .left-profile {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+  .left-profile .nama {
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1em;
+  }
+  .left-profile .jabatan {
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .left-profile .btn-kontak {
+    background-color: #0026f8;
+    color: white;
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .left-profile .btn-resume {
+    background-color: white;
+    color: #93af83;
+    padding: 0.5em;
+    border-width: 1px;
+    border-color: #93af83;
+    border-radius: 20px;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .left-profile .profile-image {
+    padding-left: 2em;
+  }
+  .left-profile .profile-intro {
+    padding-left: 2em;
+  }
+
+  .right-profile {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4em;
+    justify-content: start;
+  }
+  .bio-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+    justify-content: space-between;
+  }
+  .ml-2 {
+    margin-left: 2em;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-left {
+    text-align: left;
+  }
+
+  .section-bio-form {
+    background-color: white;
+    padding: 2em;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  .form-group input {
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #93af83;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  .btn-submit {
+    margin-top: 1em;
+    width: 100%;
+    background-color: #2f6e16;
+    color: white;
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+  }
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .menu {
+      display: none;
+    }
+    .menu-btn {
+      display: block;
+    }
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .menu {
+      display: none;
+    }
+    .menu-btn {
+      display: block;
+    }
+    .profile-section {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      background-color: white;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .right-profile {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      justify-content: start;
+    }
+    .bio-section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      justify-content: space-between;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .profile-section {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      background-color: white;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .right-profile {
+      width: 25%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 4em;
+      justify-content: start;
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .menu-btn {
+      display: none;
+    }
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .menu-btn {
+      display: none;
+    }
+  }
