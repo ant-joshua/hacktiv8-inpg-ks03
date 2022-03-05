@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-hidden{
+            display: none;
+        }
+
+        .form{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hasil" class="result"></div>
+
+    <div id="hasilArray"></div>
+
+    <div id="hasilObject"></div>
+
+    <div id="penjumlahan"></div>
+
+    <div id="modulus"></div>
+
+    <button onclick="penjumlahan(1,2);">
+    Klik Saya</button>
+
+    <!-- <button onclick="this.innerHTML = Date()" onmouseover="alert('testing');" onkeydown="alert('keydown')"> Waktu Sekarang </button> -->
+
+    <button onclick="changeFormClass()"> Testing</button>
+
+    <h1 id="form" class="form">Ini Form</h1>
+
+    <script>
+
+        var bilangan1 = 20;
+        var bilangan2 = 6;
+
+        // var penjumlahan = bilangan1 + bilangan2;
+
+        document.getElementById('penjumlahan').innerHTML = penjumlahan(bilangan1, bilangan2);
+
+        var modul = bilangan1 % bilangan2;
+
+
+        document.getElementById('modulus').innerHTML = modul;
+
+
+        function penjumlahan(number1, number2) {
+            var hasil = number1 + number2;
+            // alert(hasil);
+            return hasil;
+        }
+
+        function changeFormClass(){
+            var form = document.getElementById('form');
+            if(form.hasAttribute('class')){
+                let className = form.getAttribute('class');
+                if(className == 'form'){
+                    form.setAttribute('class', 'form-hidden');
+                }else{
+                    form.setAttribute('class', 'form');
+                }
+            }
+                
+            // form.setAttribute('class', 'form');
+        }
+
+        
+
+
+
+        // var kalimat = "Belajar JS";
+
+        // document.querySelector(".result").innerHTML = kalimat;
+
+
+        // var transportasi = ["Sepeda", "Motor", "Mobil"];
+
+        // // console.log(transportasi.join("-"))
+
+        // document.querySelector("#hasilArray").innerHTML = transportasi.join("<br>");
+
+
+        // var tipeObject = {
+        //     nama: "Budi",
+        //     umur: 20,
+        //     alamat: "Jakarta",
+        //     pekerjaan: "PNS"
+        // }
+
+        // // console.log(tipeObject['nama'] + " " + tipeObject['umur']);
+
+        // document.getElementById("hasilObject").innerHTML = tipeObject.nama + "<br>" + tipeObject.umur + "<br>" + tipeObject.alamat + "<br>" + tipeObject.pekerjaan;
+
+
+
+        // console.log("testing")
+        // // alert("ini alert");
+        // document.write("ini document");
+
+        // // let check = confirm("ini confirm");
+        // // console.log(check);
+
+        // let input = prompt("input");
+        // console.log(input);
+    </script>
+</body>
+</html>

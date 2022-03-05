@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <button onclick="rubahHasil('dari click')" onmouseover="rubahHasil('dari mouse over')">Button</button>
+    <div id="hasil"></div>
+    
+    
+
+    <!-- <form> -->
+        <input type="text" id="bilangan1" value="20">
+        <input type="text" id="bilangan2" value="6">
+        <button type="button" onclick="submitHitung()" >Button Hitung</button>
+        <div id="penjumlahan"></div>
+    <!-- </form> -->
+<body>
+    <script>
+        var bilangan1 = document.getElementById('bilangan1').value;
+        var bilangan2 = document.getElementById('bilangan2').value;
+
+        var hitung = penjumlahan(bilangan1, bilangan2);
+
+        document.getElementById('penjumlahan').innerHTML = hitung;
+
+        function submitHitung(){
+
+            console.log("hitung");
+            var bilangan1 = document.getElementById('bilangan1').value;
+            var bilangan2 = document.getElementById('bilangan2').value;
+
+            var hasil = parseInt(bilangan1) + parseInt(bilangan2);
+
+            document.getElementById('penjumlahan').innerHTML = hasil;
+
+            return hasil;
+        }
+
+        function penjumlahan(number1, number2) {
+            var hasil = parseInt(number1) + Number(number2);
+            // alert(hasil);
+            return hasil;
+        }
+
+        function rubahHasil(title){
+            var hasilDom = document.getElementById('hasil');
+            
+
+            if(hasilDom.innerHTML.length > 0){
+                hasilDom.innerHTML = "";
+            }else{
+                hasilDom.innerHTML = title;
+            }
+        }
+        
+
+        // console.log(hasilDom);
+        
+    </script>
+</body>
+</html>
