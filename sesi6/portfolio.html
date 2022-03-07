@@ -1,0 +1,162 @@
+<html>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <title>Sesi 1</title>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+      <div style="padding-top: 1em; padding-left: 1em">testing</div>
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="#">HOME</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">PRODUCT</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">GALLERY</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">BLOG</a>
+        </li>
+        <li class="menu-item">
+          <a href="#">INVENTORY</a>
+        </li>
+      </ul>
+      <button class="menu-btn">Menu</button>
+    </nav>
+    <header class="header"></header>
+    <main>
+      <!-- Profile -->
+      <section class="profile-section">
+        <div class="left-profile">
+          <div class="profile-image">
+            <img src="https://via.placeholder.com/200" alt="profile" />
+          </div>
+          <div class="profile-intro">
+            <div class="nama" id="displayName">Antonius Joshua</div>
+            <div class="jabatan" id="displayRole">Frontend Designer</div>
+            <div>
+              <div>
+                <button class="btn-kontak" id="btnEdit" onclick="editForm()">
+                  Edit
+                </button>
+                <button class="btn-resume">Resume</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-profile">
+          <div class="bio-section availability-section">
+            <div>Availability :</div>
+            <div class="ml-2 text-left">Full Time</div>
+          </div>
+          <div class="bio-section age-section">
+            <div>Usia :</div>
+            <div class="ml-2 text-left">23</div>
+          </div>
+          <div class="bio-section location-section">
+            <div>Lokasi :</div>
+            <div class="ml-2 text-left">Full Time</div>
+          </div>
+          <div class="bio-section experience-section">
+            <div>Pengalaman :</div>
+            <div class="ml-2 text-left">5 Tahun</div>
+          </div>
+          <div class="bio-section email-section">
+            <div>Email:</div>
+            <div class="ml-2 text-left">antoniusjoshua47@gmail.com</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Forms -->
+      <section class="section-bio-form" id="sectionBioForm">
+        <form>
+          <div class="form-group">
+            <label for=""> Name </label>
+            <input type="text" name="name" id="name" placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <label for="role"> Role </label>
+            <input type="text" name="role" id="role" placeholder="role" />
+          </div>
+          <div class="form-group">
+            <label for="availability"> Availability </label>
+            <input
+              type="text"
+              name="availability"
+              id="availability"
+              placeholder="availability"
+            />
+          </div>
+          <div class="form-group">
+            <label for="age"> Age </label>
+            <input type="text" name="age" id="age" placeholder="Age : " />
+          </div>
+          <div class="form-group">
+            <label for="lokasi"> Lokasi </label>
+            <input type="text" name="lokasi" id="lokasi" placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <label for="experience"> Yours Experience </label>
+            <input
+              type="text"
+              name="experience"
+              id="experience"
+              placeholder="experience"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email"> Email </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="ex : antoniusjoshua47@gmail.com"
+            />
+          </div>
+          <button type="button" class="btn-submit" onclick="submitData()">
+            Submit
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer></footer>
+    <script>
+      function editForm() {
+        // display
+        var name = document.getElementById("displayName");
+        var displayRole = document.getElementById("displayRole");
+
+        // form
+        var inputName = document.getElementById("name");
+        inputName.value = name.innerText;
+
+        var inputRole = document.getElementById("role");
+        inputRole.value = displayRole.innerText;
+      }
+
+      function submitData() {
+        // display
+
+        if (confirm("Apakah ingin mengubah data")) {
+          var name = document.getElementById("displayName");
+          var role = document.getElementById("displayRole");
+
+          // form
+          var inputName = document.getElementById("name");
+          name.innerText = inputName.value;
+
+          var inputRole = document.getElementById("role");
+          role.innerText = inputRole.value;
+
+          alert("Data berhasil diubah");
+        }
+      }
+    </script>
+  </body>
+</html>
