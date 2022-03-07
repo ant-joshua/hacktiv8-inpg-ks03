@@ -17,6 +17,16 @@
         <button type="button" onclick="submitHitung()" >Button Hitung</button>
         <div id="penjumlahan"></div>
     <!-- </form> -->
+
+    <div>
+        <input type="text" id="hobby" name="hobby" value="">
+        <button type="button" onclick="submitHobby()">Add Hobby</button>
+        <ul id="hobbyList">
+            <li>
+                <label>Membaca</label>
+            </li>
+        </ul>
+    </div>
 <body>
     <script>
         var bilangan1 = document.getElementById('bilangan1').value;
@@ -25,6 +35,16 @@
         var hitung = penjumlahan(bilangan1, bilangan2);
 
         document.getElementById('penjumlahan').innerHTML = hitung;
+
+        function submitHobby(){
+            var hobby = document.getElementById('hobby').value;
+            var hobbyList = document.getElementById('hobbyList');
+            var li = document.createElement('li');
+            var label = document.createElement('label');
+            label.innerHTML = hobby;
+            li.appendChild(label);
+            hobbyList.appendChild(li);
+        }
 
         function submitHitung(){
 
