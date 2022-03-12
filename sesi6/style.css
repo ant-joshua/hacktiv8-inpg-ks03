@@ -1,0 +1,149 @@
+body{
+    background-color: lightblue;
+}
+.nav{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+}
+.menu .menu-item{
+    list-style-type: none;
+    margin-right: 3em;
+}
+.menu .menu-item a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+.profile-section{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: white;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+}
+.left-profile{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.left-profile .nama{
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 1em;
+}
+.left-profile .jabatan{
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.left-profile .btn-kontak{
+    background-color: #154c79;
+    color: white;
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.left-profile .btn-resume{
+    background-color: white;
+    color: #93AF83;
+    padding: 0.5em;
+    border-width: 1px;
+    border-color: #93AF83;
+    border-radius: 20px;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.left-profile .profile-image{
+    margin-left: 2em;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.left-profile .profile-intro{
+    padding-left: 2em;
+}
+.right-profile{
+    padding-left: 15em;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4em;
+    justify-content: start;
+}
+.bio-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+    justify-content: space-between;
+}
+.right-profile .availability-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.ml-2 {
+    margin-left: 2em;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+
+.section-bio-form {
+    background-color: white;
+    padding: 2em;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+.form-group input {
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #93af83;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+.btn-submit {
+    margin-top: 1em;
+    width: 100%;
+    background-color: #1e81b0;
+    color: white;
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+}

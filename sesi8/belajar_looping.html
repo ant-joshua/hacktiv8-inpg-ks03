@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // While Looping
+      //   let kondisi = true;
+      //   let number = 1;
+      //   while (kondisi) {
+      //     console.log(number);
+      //     if (number >= 3) {
+      //       kondisi = false;
+      //     }
+      //     number++;
+      //   }
+
+      // Do While Looping
+      //   let kondisi = true;
+      //   let number = 1;
+      //   do {
+      //     console.log(number);
+      //     if (number >= 3) {
+      //       kondisi = false;
+      //     }
+      //     number++;
+      //   } while (kondisi);
+
+      // for looping
+
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+      }
+
+      const hobbies = ["Membaca", "Menulis", "Menggambar"];
+      // hobbies.forEach((hobby, index) => {
+      //     console.log(hobby);
+      // });
+
+      // for(hobby in hobbies){
+      //     console.log(hobby);
+      //     console.log(hobbies[hobby]);
+      // }
+
+      // profile object
+      let profile = {
+        name: "Antonius Joshua",
+        kelas: "XI RPL 2",
+        hobbies: ["Membaca", "Menulis", "Menggambar"],
+      };
+
+      console.log(profile["name"]);
+
+      for (data in profile) {
+        // console.log(data);
+        // console.log(profile[data]);
+        if (data == "hobbies") {
+          for (hobby in profile[data]) {
+            // console.log(hobby);
+            console.log(profile[data][hobby]);
+          }
+        }
+      }
+
+      0000
+      0000
+      0000
+    </script>
+  </body>
+</html>

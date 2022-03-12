@@ -1,0 +1,172 @@
+<html> 
+    <title>Sesi 6</title>
+    <link href="style.css" rel="stylesheet">
+    <body> 
+    <nav class="nav">
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#" >Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" >Product</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" >Gallery</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" >Blog</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" >Inventory</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section class="profile-section">
+            <div class="left-profile">
+                <div class="profile-image">
+                    <img src="https://media-exp1.licdn.com/dms/image/C5103AQElUoyKjSyF2A/profile-displayphoto-shrink_200_200/0/1523727599796?e=1647475200&v=beta&t=Kl2J6GAVp1h053alv7pF8g2V65RanjwvOcyR4O608KA" alt="profile" />
+                </div>
+                <div class="profile-intro">
+                    <div class="nama" id="displayName">Rifqi Arrahman</div>
+                    <div class="jabatan" id="displayRole">Frontend Designer</div>
+                <div>
+                    <div>
+                        <button class="btn-kontak" id="btnEdit" onclick="editForm()">Edit</button>
+                        <button class="btn-resume">Resume</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="right-profile">
+                <div class="bio-section availability-section">
+                    <div>Availability :</div>
+                    <div class="ml-2 text-left" id="displayAvail">Part Time</div>
+                </div>
+                <div class="bio-section age-section">
+                    <div>Usia :</div>
+                    <div class="ml-2 text-left" id="displayAge">20</div>
+                </div>
+                <div class="bio-section location-section">
+                    <div>Lokasi :</div>
+                    <div class="ml-2 text-left" id="displayLocation">Bandung</div>
+                </div>
+                <div class="bio-section experience-section">
+                    <div>Pengalaman :</div>
+                    <div class="ml-2 text-left" id="displayExp">2 Tahun</div>
+                </div>
+                <div class="bio-section email-section">
+                    <div>Email:</div>
+                    <div class="ml-2 text-left" id="displayEmail">rifqi.arrahman98@gmail.com</div>
+                </div>
+            </div>
+            </section>
+
+            <section class="section-bio-form">
+            <form>
+                <div class="form-group">
+                    <label for=""> Name </label>
+                    <input type="text" name="name" id="name" placeholder="Name" />
+                </div>
+                <div class="form-group">
+                    <label for="role"> Role </label>
+                    <input type="text" name="role" id="role" placeholder="role" />
+                </div>
+                <div class="form-group">
+                    <label for="availability"> Availability </label>
+                    <input type="text" name="availability" id="availability" placeholder="availability" />
+                </div>
+                <div class="form-group">
+                    <label for="age"> Age </label>
+                    <input type="text" name="age" id="age" placeholder="Age : " />
+                </div>
+                <div class="form-group">
+                    <label for="lokasi"> Lokasi </label>
+                    <input type="text" name="lokasi" id="lokasi" placeholder="Kota" />
+                </div>
+                <div class="form-group">
+                    <label for="experience"> Yours Experience </label>
+                    <input type="text" name="experience" id="experience" placeholder="experience"/>
+                </div>
+                <div class="form-group">
+                    <label for="email"> Email </label>
+                    <input type="email" name="email" id="email" placeholder="ex : rifqi.arrahman98@gmail.com"/>
+                </div>
+                <button type="button" class="btn-submit" onclick="submitData()">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        function editForm() {
+        // display
+        var name = document.getElementById("displayName");
+        var displayRole = document.getElementById("displayRole");
+        var displayAvail = document.getElementById("displayAvail");
+        var displayAge = document.getElementById("displayAge");
+        var displayLocation = document.getElementById("displayLocation");
+        var displayExp = document.getElementById("displayExp");
+        var displayEmail = document.getElementById("displayEmail");
+
+        // form
+        var inputName = document.getElementById("name");
+        inputName.value = name.innerText;
+
+        var inputRole = document.getElementById("role");
+        inputRole.value = displayRole.innerText;
+
+        var inputAvail = document.getElementById("availability");
+        inputAvail.value = displayAvail.innerText;
+
+        var inputAge = document.getElementById("age");
+        inputAge.value = displayAge.innerText;
+
+        var inputLokasi = document.getElementById("lokasi");
+        inputLokasi.value = displayLocation.innerText;
+
+        var inputExp = document.getElementById("experience");
+        inputExp.value = displayExp.innerText;
+
+        var inputEmail = document.getElementById("email");
+        inputEmail.value = displayEmail.innerText;
+      }
+
+      function submitData() {
+        // display
+
+        if (confirm("Apakah ingin mengubah data")) {
+          var name = document.getElementById("displayName");
+          var role = document.getElementById("displayRole");
+          var availability = document.getElementById("displayAvail");
+          var age = document.getElementById("displayAge");
+          var lokasi = document.getElementById("displayLocation");
+          var experience = document.getElementById("displayExp");
+          var email = document.getElementById("displayEmail");
+
+          // form
+          var inputName = document.getElementById("name");
+          name.innerText = inputName.value;
+
+          var inputRole = document.getElementById("role");
+          role.innerText = inputRole.value;
+
+          var inputAvail = document.getElementById("availability");
+          availability.innerText = inputAvail.value  
+
+          var inputAge = document.getElementById("age");
+          age.innerText = inputAge.value;
+
+          var inputLokasi = document.getElementById("lokasi");
+          lokasi.innerText = inputLokasi.value;
+
+          var inputExp = document.getElementById("experience");
+          experience.innerText = inputExp.value;
+
+          var inputEmail = document.getElementById("email");
+          email.innerText = inputEmail.value;
+
+          alert("Data berhasil diubah");
+        }
+      }
+    </script>
+    </body>
+</html>
