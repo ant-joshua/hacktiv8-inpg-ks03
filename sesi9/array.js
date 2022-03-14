@@ -68,3 +68,5 @@ console.log("join", hasilJoin);
  */
 const hasilSplit = hasilJoin.split(",");
 console.log("split", hasilSplit);
+
+// animals.

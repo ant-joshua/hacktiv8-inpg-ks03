@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <section class="p-5">
+      <form
+        onsubmit="handleSubmit(event)"
+        id="form"
+        class="p-5 w-1/4 border-1 shadow-xl shadow-gray-400 rounded-xl"
+      >
+        <input type="hidden" id="form_type" name="form_type" value="add" />
+        <input type="hidden" id="currentIndex" name="currentIndex" value="" />
+        <div class="mb-2 flex flex-col">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="border-2 border-blue-500 hover:border-yellow-400 rounded-lg px-2 py-1"
+            placeholder="name"
+            name="name"
+            id="name"
+          />
+        </div>
+        <div class="mb-2 flex flex-col">
+          <label for="cohort">Cohort</label>
+          <input
+            type="text"
+            class="border-2 border-blue-500 hover:border-yellow-400 rounded-lg px-2 py-1"
+            name="cohort"
+            id="cohort"
+          />
+        </div>
+        <div class="mb-2 flex flex-col">
+          <label for="nilai">nilai</label>
+          <input
+            type="text"
+            class="border-2 border-blue-500 hover:border-yellow-400 rounded-lg px-2 py-1"
+            name="nilai"
+            id="nilai"
+          />
+        </div>
+        <button class="w-full bg-red-500 rounded-lg text-white mt-2" type="submit">Submit</button>
+      </form>
+    </section>
+    1
+
+    <button onclick="onClickAddBtn()" class="">Add</button>
+    <ul id="studentList"></ul>
+
+    <script>
+      //   const students = [
+      //     {
+      //       name: "Remy",
+      //       lastname: "testing",
+      //       cohort: "Jan",
+      //       nilai: 80,
+      //       verified: true,
+      //     },
+      //     { name: "Genevieve", cohort: "March", nilai: 75, verified: false },
+      //     { name: "Chuck", cohort: "Jan", nilai: 70, verified: true },
+      //     { name: "Osmund", cohort: "June", nilai: 85, verified: true },
+      //     { name: "Nikki", cohort: "June", nilai: 95, verified: true },
+      //     { name: "Boris", cohort: "June", nilai: 100, verified: true },
+      //   ];
+
+      const students = window.localStorage.getItem("students")
+        ? JSON.parse(window.localStorage.getItem("students"))
+        : [];
+
+      function toggleHideForm() {
+        const form = document.getElementById("form");
+        if (form.style.display === "none") {
+          form.style.display = "block";
+        } else {
+          form.style.display = "none";
+        }
+      }
+
+      function onClickAddBtn() {
+        // toggleHideForm();
+        const form_type = document.getElementById("form_type");
+        form_type.value = "add";
+      }
+
+      function onClickEditBtn(index) {
+        // toggleHideForm();
+        const form_type = document.getElementById("form_type");
+        form_type.value = "edit";
+
+        const currentIndex = document.getElementById("currentIndex");
+        currentIndex.value = index;
+
+        const findStudent = students[index];
+
+        const name = document.getElementById("name");
+        name.value = findStudent.name;
+
+        const cohort = document.getElementById("cohort");
+        cohort.value = findStudent.cohort;
+
+        const nilai = document.getElementById("nilai");
+        nilai.value = findStudent.nilai;
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        const name = document.querySelector("#name").value;
+        const cohort = document.querySelector("#cohort").value;
+        const nilai = document.querySelector("#nilai").value;
+        const student = {
+          name: name,
+          cohort: cohort,
+          nilai: nilai,
+          verified: true,
+        };
+
+        const form = document.querySelector("form");
+        const form_type = document.querySelector("#form_type").value;
+        const currentIndex = document.getElementById("currentIndex");
+        if (form_type === "add") {
+          students.push(student);
+        } else {
+          students[currentIndex.value] = student;
+        }
+
+        this.render();
+
+        window.localStorage.setItem("students", JSON.stringify(students));
+
+        form.reset();
+      }
+
+      //   function addStudent(name,lastname,cohort,nilai,verified) {
+      //     const studentList = document.getElementById("studentList");
+      //     const studentItem = document.createElement("li");
+      //     studentItem.innerHTML = `${student.name} ${student.lastname}`;
+      //     studentList.appendChild(studentItem);
+      //   }
+
+      function render() {
+        /// delete all the list items
+        const list = document.getElementById("studentList");
+        // list.remove("li");
+        // while (list.firstChild) {
+        //   list.removeChild(list.firstChild);
+        // }
+
+        list.innerHTML = "";
+
+        students.forEach((student, index) => {
+          const li = document.createElement("li");
+          li.innerHTML = `${student.name} ${student.nilai} 
+            <button onclick="onClickEditBtn(${index})">Edit</button>
+            <button onclick="onDeleteStudent(${index})">Delete</button>
+          `;
+          document.getElementById("studentList").appendChild(li);
+        });
+      }
+
+      this.render();
+
+      // append students to #sutdentList
+      //   students.forEach((student,index) => {
+      //     const li = document.createElement("li");
+      //     li.innerHTML = `${student.name} ${student.lastname} <button onclick="onDeleteStudent(${index})">Delete</button>`;
+      //     document.getElementById("studentList").appendChild(li);
+      //   });
+
+      function onDeleteStudent(index) {
+        students.splice(index, 1);
+
+        window.localStorage.setItem("students", JSON.stringify(students));
+        this.render();
+      }
+    </script>
+  </body>
+</html>
