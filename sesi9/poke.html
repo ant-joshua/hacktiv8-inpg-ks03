@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    
+  </head>
+  <body>
+    <div id="app">
+      <section class="p-10">
+          {{message}}
+          <input type="text" v-model="message" />
+        <table class="table-auto">
+          <thead>
+            <tr>
+              <th>Name</th>
+            </tr>
+            <tr>
+              <th>Url</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item, index) in pokeListGetter" :key="index">
+              <td>{{ item.name }}</td>
+              <td>{{ item.url }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue!",
+          pokeList: [],
+        },
+        computed:{
+            pokeListGetter(){
+                return this.pokeList;
+            }
+        },
+        mounted(){
+            this.fetchData();
+        },
+        methods: {
+          fetchData: async function() {
+            const basePokeApi = "https://pokeapi.co/api/v2";
+            const getPokemon = await fetch(
+              basePokeApi + "/pokemon?limit=100&offset=200"
+            ).then((res) => res.json());
+            // getPokemon.then(response => response.json());
+
+            // console.log(getPokemon);
+
+            const result = getPokemon.results;
+            this.pokeList = result;            
+
+            console.log(this.pokeList);
+          },
+          //   getPokeList: function() {
+          //     var self = this;
+          //     axios.get("https://pokeapi.co/api/v2/pokemon?limit=151")
+          //     .then(function(response) {
+          //       self.pokeList = response.data.results;
+          //     })
+          //     .catch(function(error) {
+          //       console.log(error);
+          //     });
+          //   }
+        },
+      }).$mount("#app");;
+
+      
+    </script>
+  </body>
+</html>
