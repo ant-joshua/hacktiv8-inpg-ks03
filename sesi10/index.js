@@ -8,16 +8,23 @@ const { formatNumber } = require("./helper");
 app.get("/", async (req, res) => {
   const resultCovid = await getDataCovid();
   const result = await getDataProvinsiCovid();
-  console.log(resultCovid);
+
   const totalData = resultCovid.update.total;
 
   const listData = result.list_data;
+
   res.render("index", {
     listData: listData,
     totalData: totalData,
     helpers: {
       formatNumber,
     },
+  });
+});
+
+app.get("/api", (req, res) => {
+  res.json({
+    message: "Hello World",
   });
 });
 
