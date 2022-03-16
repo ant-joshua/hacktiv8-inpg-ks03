@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <h1>Data Covid 19 Indonesia</h1>
+    <div>
+      Positif : <%= helpers.formatNumber(totalData.jumlah_positif) %>
+    </div>
+    <div>
+      Sembuh : <%= totalData.jumlah_sembuh %>
+    </div>
+    <div>
+      Meninggal : <%= totalData.jumlah_meninggal %>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Provinsi</th>
+          <th>Positif</th>
+          <th>Sembuh</th>
+          <th>Meninggal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% listData.forEach(data => { %>
+        <tr>
+          <td><%= data.key %></td>
+          <td><%= data.jumlah_kasus %></td>
+          <td><%= data.jumlah_sembuh %></td>
+          <td><%= data.jumlah_meninggal %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>
