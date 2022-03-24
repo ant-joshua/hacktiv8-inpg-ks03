@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 4002;
 
 const { getDataProvinsiCovid, getDataCovid } = require("./ajax");
 const { formatNumber } = require("./helper");
@@ -20,6 +20,10 @@ app.get("/", async (req, res) => {
       formatNumber,
     },
   });
+});
+
+app.get("/about", (req, res) => {
+  res.render("about");
 });
 
 app.get("/api", (req, res) => {
