@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aplikasi Ubah Warna</h1>
+    <div>
+        <label for="inputBackground">Warna Latar</label>
+        <input type="color" id="inputBackground"  />
+    </div>
+    <div id="sectionInputText">
+        <label for="inputText">
+            Warna Teks
+        </label>
+        <input type="color" id="inputText" />
+    </div>
+    <div>
+        <button onclick="removeH1()">Remove H1</button>
+        <button onclick="removeSection('#sectionInputText')">Remove Section Input</button>
+    </div>
+    <script>
+
+        var inputBackground = document.getElementById('inputBackground');
+        var inputText = document.getElementById('inputText');
+
+        inputBackground.addEventListener('change', function() {
+            document.body.style.backgroundColor = inputBackground.value;
+        });
+
+        inputText.addEventListener('change', function() {
+            document.body.style.color = inputText.value;
+        });
+
+        function removeH1() {
+            var h1 = document.querySelectorAll('h1')[0];
+            h1.parentNode.removeChild(h1);
+        }
+
+        function removeSection(selector) {
+            var section = document.querySelector(selector);
+            section.remove();
+        }
+    </script>
+</body>
+</html>

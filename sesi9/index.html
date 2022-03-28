@@ -58,9 +58,9 @@
         <button class="w-full bg-red-500 rounded-lg text-white mt-2" type="submit">Submit</button>
       </form>
     </section>
-    1
+    
 
-    <button onclick="onClickAddBtn()" class="">Add</button>
+    <button onclick="onClickAddBtn()" class="px-3 py-2 bg-blue-500 text-white rounded-lg">Add</button>
     <ul id="studentList"></ul>
 
     <script>
@@ -81,9 +81,9 @@
 
       
 
-    //   const students = window.localStorage.getItem("students")
-    //     ? JSON.parse(window.localStorage.getItem("students"))
-    //     : [];
+      const students = window.localStorage.getItem("students")
+        ? JSON.parse(window.localStorage.getItem("students"))
+        : [];
 
       function toggleHideForm() {
         const form = document.getElementById("form");
@@ -167,9 +167,10 @@
 
         students.forEach((student, index) => {
           const li = document.createElement("li");
+          li.className = "border-b border-gray-500 p-3";
           li.innerHTML = `${student.name} ${student.nilai} 
-            <button onclick="onClickEditBtn(${index})">Edit</button>
-            <button onclick="onDeleteStudent(${index})">Delete</button>
+            <button class="px-3 py-2 bg-yellow-500 text-white rounded-lg" onclick="onClickEditBtn(${index})">Edit</button>
+            <button class="px-3 py-2 bg-red-500 text-white rounded-lg" onclick="onDeleteStudent(${index})">Delete</button>
           `;
           document.getElementById("studentList").appendChild(li);
         });
